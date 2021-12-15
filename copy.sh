@@ -1,4 +1,5 @@
 #!/bin/bash
 
 cp ~/.vimrc ./
-ls -a
+ls -ltra
+git status
