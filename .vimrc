@@ -9,6 +9,7 @@ Plug 'morhetz/gruvbox', { 'as': 'gruvbox' }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'preservim/nerdcommenter'
+Plug 'preservim/nerdtree'
 
 call plug#end()
 
@@ -16,7 +17,7 @@ call plug#end()
 set termguicolors
 colorscheme gruvbox
 set bg=dark
-let g:gruvbox_contrast_dark='hard'
+" let g:gruvbox_contrast_dark='hard'
 "END_THEME_STUFF
 
 
@@ -50,3 +51,33 @@ let g:NERDTrimTrailingWhitespace = 1
 " Enable NERDCommenterToggle to check all selected lines is commented or not 
 let g:NERDToggleCheckAllLines = 1
 "END_NERDCOMMENTER_STUFF
+
+
+"SET_INSERT_CURSOR_TO_LINE
+let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+let &t_SR = "\<Esc>]50;CursorShape=2\x7"
+let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+set ttimeout
+set ttimeoutlen=1
+set listchars=tab:>-,trail:~,extends:>,precedes:<,space:.
+set ttyfast
+"END_SET_INSERT_CURSOR_TO_LINE
+
+"NERDTREE_STUFF
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+"END_NERDTREE_STUFF
+
+"CHANGE_PANEL_FOCUS
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
+"END_CHANGE_PANEL_FOCUS
+
+
+" turn hybrid line numbers on
+:set number relativenumber
+:set nu rnu
